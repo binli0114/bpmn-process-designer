@@ -2,17 +2,17 @@
   <el-button-group>
     <el-button v-r-popover:zoomOut class="el-button__no-padding" @click="zoomOut()">
       <lucide-icon name="ZoomOut" :size="16" />
-      <el-popover ref="zoomOut" placement="bottom" trigger="hover" popper-class="button-popover" content="缩小视图" />
+      <el-popover ref="zoomOut" placement="bottom" trigger="hover" popper-class="button-popover" content="Zoom Out" />
     </el-button>
     <el-button v-r-popover:zoomReset @click="zoomReset('fit-viewport')">
       <span style="text-align: center; display: inline-block; width: 40px">
         {{ Math.floor(currentScale * 10) * 10 + "%" }}
       </span>
-      <el-popover ref="zoomReset" placement="bottom" trigger="hover" popper-class="button-popover" content="重置缩放" />
+      <el-popover ref="zoomReset" placement="bottom" trigger="hover" popper-class="button-popover" content="Reset" />
     </el-button>
     <el-button v-r-popover:zoomIn class="el-button__no-padding" @click="zoomIn()">
       <lucide-icon name="ZoomIn" :size="16" />
-      <el-popover ref="zoomIn" placement="bottom" trigger="hover" popper-class="button-popover" content="放大视图" />
+      <el-popover ref="zoomIn" placement="bottom" trigger="hover" popper-class="button-popover" content="Zoom In" />
     </el-button>
   </el-button-group>
 </template>

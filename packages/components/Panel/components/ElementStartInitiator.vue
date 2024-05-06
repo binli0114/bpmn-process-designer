@@ -1,7 +1,7 @@
 <template>
   <el-collapse-item name="element-start-initiator">
     <template #title>
-      <collapse-title title="启动器">
+      <collapse-title title="Starter">
         <lucide-icon name="PlayCircle" />
       </collapse-title>
     </template>

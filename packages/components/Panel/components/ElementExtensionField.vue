@@ -1,7 +1,7 @@
 <template>
   <el-collapse-item name="element-extension-field">
     <template #title>
-      <collapse-title title="扩展字段">
+      <collapse-title title="Extended Field">
         <lucide-icon name="PlayCircle" />
       </collapse-title>
     </template>
@@ -13,7 +13,9 @@
         <el-input v-model="field.string" />
       </edit-item>
 
-      <el-button type="primary" class="inline-large-button" @click="setElementExtensionField(-1)"> 更新字段 </el-button>
+      <el-button type="primary" class="inline-large-button" @click="setElementExtensionField(-1)">
+        Update Field
+      </el-button>
     </div>
   </el-collapse-item>
 </template>

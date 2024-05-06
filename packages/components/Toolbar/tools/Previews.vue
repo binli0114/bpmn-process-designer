@@ -1,10 +1,10 @@
 <template>
   <el-button v-popover:popover type="primary">
-    预览文件
+    Preview
     <el-popover ref="popover" placement="bottom" popper-class="button-popover" trigger="hover">
       <div class="button-list_column">
-        <el-button type="primary" @click="openXMLPreviewModel">预览 XML</el-button>
-        <el-button type="primary" @click="openJsonPreviewModel">预览 JSON</el-button>
+        <el-button type="primary" @click="openXMLPreviewModel">XML</el-button>
+        <el-button type="primary" @click="openJsonPreviewModel">JSON</el-button>
       </div>
     </el-popover>
 
@@ -25,7 +25,7 @@ export default {
   computed: {
     ...mapGetters(["getModeler"]),
     modelTitle() {
-      return this.codeLanguage === "xml" ? "预览 XML" : "预览 JSON";
+      return this.codeLanguage === "xml" ? "Preview XML" : "Preview JSON";
     }
   },
   data() {
@@ -38,7 +38,7 @@ export default {
   methods: {
     async openXMLPreviewModel() {
       try {
-        if (!this.getModeler) return this.$message.error("流程图引擎初始化失败");
+        if (!this.getModeler) return this.$message.error("Failed to initialize the process engine");
         this.codeLanguage = "xml";
         this.codeModelVisible = true;
         const { xml } = await this.getModeler.saveXML({ format: true, preamble: true });
@@ -49,7 +49,7 @@ export default {
     },
     async openJsonPreviewModel() {
       try {
-        if (!this.getModeler) return this.$message.error("流程图引擎初始化失败");
+        if (!this.getModeler) return this.$message.error("Failed to initialize the process engine");
         this.codeLanguage = "json";
         this.codeModelVisible = true;
         const { xml } = await this.getModeler.saveXML({ format: true, preamble: true });

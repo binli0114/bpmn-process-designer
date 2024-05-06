@@ -1,7 +1,7 @@
 <template>
   <el-collapse-item name="base-info">
     <template #title>
-      <collapse-title title="常规信息">
+      <collapse-title title="General Information">
         <lucide-icon name="Info" />
       </collapse-title>
     </template>

@@ -1,20 +1,20 @@
 <template>
   <el-collapse-item name="element-conditional">
     <template #title>
-      <collapse-title title="条件设置">
+      <collapse-title title="Conditional Settings">
         <lucide-icon name="ArrowLeftRight" />
       </collapse-title>
     </template>
     <div class="element-conditional">
       <template v-if="varVisible">
-        <edit-item key="variableName" label="变量名称" :label-width="120">
+        <edit-item key="variableName" label="Variable Name" :label-width="120">
           <el-input v-model="variableName" maxlength="32" @change="setElementVariableName" />
         </edit-item>
-        <edit-item v-if="varEventVisible" key="variableEvent" label="变量事件" :label-width="120">
+        <edit-item v-if="varEventVisible" key="variableEvent" label="Variable Event" :label-width="120">
           <el-input v-model="variableEvents" @change="setElementVariableEvents" />
         </edit-item>
       </template>
-      <edit-item key="condition" label="条件类型" :label-width="120">
+      <edit-item key="condition" label="Condition Type" :label-width="120">
         <el-select
           v-model="conditionData.conditionType"
           :options="conditionTypeOptions"
@@ -30,12 +30,12 @@
         <el-input v-model="conditionData.expression" @change="setConditionExpression" />
       </edit-item>
       <template v-if="conditionData.conditionType && conditionData.conditionType === 'script'">
-        <edit-item key="scriptType" label="脚本类型" :label-width="120">
+        <edit-item key="scriptType" label="Script Type" :label-width="120">
           <el-select v-model="conditionData.scriptType" @change="setElementConditionScriptType">
             <el-option v-for="{ label, value } in scriptTypeOptions" :label="label" :value="value" :key="value" />
           </el-select>
         </edit-item>
-        <edit-item key="scriptLanguage" label="脚本语言" :label-width="120">
+        <edit-item key="scriptLanguage" label="Script Language" :label-width="120">
           <el-input v-model="conditionData.language" @change="setConditionScriptLanguage" />
         </edit-item>
         <edit-item v-show="conditionData.scriptType === 'inline'" key="scriptBody" label="脚本内容" :label-width="120">
@@ -44,7 +44,7 @@
         <edit-item
           v-show="conditionData.scriptType === 'external'"
           key="scriptResource"
-          label="资源地址"
+          label="Script Resource"
           :label-width="120"
         >
           <el-input v-model="conditionData.resource" @change="setConditionScriptResource" />

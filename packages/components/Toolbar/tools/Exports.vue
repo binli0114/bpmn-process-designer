@@ -1,11 +1,11 @@
 <template>
   <el-button v-popover:popover type="primary">
-    导出文件
+    Export
     <el-popover ref="popover" placement="bottom" popper-class="button-popover" trigger="hover">
       <div class="button-list_column">
-        <el-button type="primary" @click="downloadProcessAsBpmn">导出为 Bpmn</el-button>
-        <el-button type="primary" @click="downloadProcessAsXml">导出为 XML</el-button>
-        <el-button type="primary" @click="downloadProcessAsSvg">导出为 SVG</el-button>
+        <el-button type="primary" @click="downloadProcessAsBpmn">Export to Bpmn</el-button>
+        <el-button type="primary" @click="downloadProcessAsXml">Export to XML</el-button>
+        <el-button type="primary" @click="downloadProcessAsSvg">Export to SVG</el-button>
       </div>
     </el-popover>
   </el-button>
@@ -23,7 +23,7 @@ export default {
   methods: {
     async downloadProcess(type, name = "diagram") {
       try {
-        if (!this.getModeler) return this.$message.error("流程图引擎初始化失败");
+        if (!this.getModeler) return this.$message.error("Flowchart engine initialization failed");
         const modeler = this.getModeler;
         // 按需要类型创建文件并下载
         if (type === "xml" || type === "bpmn") {

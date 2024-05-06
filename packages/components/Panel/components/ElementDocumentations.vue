@@ -1,7 +1,7 @@
 <template>
   <el-collapse-item name="element-documentations">
     <template #title>
-      <collapse-title title="附加文档">
+      <collapse-title title="Attached Document">
         <lucide-icon name="FileText" />
       </collapse-title>
     </template>

@@ -78,10 +78,10 @@ class EnhancementContextPadProvider extends ContextPadProvider {
     actions["enhancement-op-1"] = {
       group: "edit",
       className: "enhancement-op",
-      title: "扩展操作1",
+      title: "Extension Operation 1",
       action: {
         click: function (e) {
-          alert("点击 扩展操作1");
+          alert("Clicked Extension Operation 1");
         }
       }
     };
@@ -90,7 +90,7 @@ class EnhancementContextPadProvider extends ContextPadProvider {
     actions["enhancement-op"] = {
       group: "enhancement",
       className: "enhancement-op",
-      title: "扩展删除",
+      title: "Extension Delete",
       action: {
         click: function (event, delElement) {
           modeling.removeElements([...(delElement.incoming || []), ...(delElement.outgoing || []), delElement]);
@@ -100,7 +100,7 @@ class EnhancementContextPadProvider extends ContextPadProvider {
     actions["enhancement-op-1"] = {
       group: "edit",
       className: "enhancement-op",
-      title: "切换ContextPad样式",
+      title: "Toggle ContextPad Style",
       action: {
         click: function (e) {
           contextPad.toggleStyles && contextPad.toggleStyles();

@@ -32,12 +32,12 @@ export default {
   data() {
     return {
       buttons: [
-        { name: "左对齐", key: "left", icon: "AlignStartVertical" },
-        { name: "水平居中", key: "center", icon: "AlignCenterVertical" },
-        { name: "右对齐", key: "right", icon: "AlignEndVertical" },
-        { name: "上对齐", key: "top", icon: "AlignStartHorizontal" },
-        { name: "垂直居中", key: "middle", icon: "AlignCenterHorizontal" },
-        { name: "下对齐", key: "bottom", icon: "AlignEndHorizontal" }
+        { name: "Align Left", key: "left", icon: "AlignStartVertical" },
+        { name: "Center Horizontally", key: "center", icon: "AlignCenterVertical" },
+        { name: "Align Right", key: "right", icon: "AlignEndVertical" },
+        { name: "Align Top", key: "top", icon: "AlignStartHorizontal" },
+        { name: "Center Vertically", key: "middle", icon: "AlignCenterHorizontal" },
+        { name: "Align Bottom", key: "bottom", icon: "AlignEndHorizontal" }
       ]
     };
   },

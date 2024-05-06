@@ -1,10 +1,11 @@
 import zhCN from "./zh-cn";
+import enAU from "./en-AU";
 
 export function customTranslate(template, replacements) {
   replacements = replacements || {};
 
   // Translate
-  template = zhCN[template] || template;
+  template = enAU[template] || template;
 
   // Replace
   return template.replace(/{([^}]+)}/g, function (_, key) {

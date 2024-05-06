@@ -1,6 +1,6 @@
 <template>
   <el-button type="primary" @click="openImportWindow">
-    打开文件
+    Open file
     <input type="file" ref="importRef" style="display: none" accept=".xml,.bpmn" @change="changeImportFile" />
   </el-button>
 </template>

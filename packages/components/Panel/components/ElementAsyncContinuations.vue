@@ -1,7 +1,7 @@
 <template>
   <el-collapse-item name="element-async-continuations">
     <template #title>
-      <collapse-title title="异步属性">
+      <collapse-title title="Asynchronous Attributes">
         <lucide-icon name="Shuffle" />
       </collapse-title>
     </template>

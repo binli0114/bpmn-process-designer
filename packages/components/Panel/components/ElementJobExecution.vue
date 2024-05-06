@@ -1,15 +1,15 @@
 <template>
   <el-collapse-item name="element-external-task">
     <template #title>
-      <collapse-title title="执行作业">
+      <collapse-title title="Execute Job">
         <lucide-icon name="CalendarClock" />
       </collapse-title>
     </template>
     <div class="element-external-task">
-      <edit-item v-if="tpVisible" label="任务优先级" :label-width="100">
+      <edit-item v-if="tpVisible" label="Task Priority" :label-width="100">
         <el-input v-model="taskPriority" maxlength="32" @change="setExternalTaskPriority" />
       </edit-item>
-      <edit-item v-if="rtVisible" label="重试周期" :label-width="100">
+      <edit-item v-if="rtVisible" label="Retry Cycle" :label-width="100">
         <el-input v-model="retryTimeCycle" maxlength="32" @change="setRetryTimeCycle" />
       </edit-item>
     </div>

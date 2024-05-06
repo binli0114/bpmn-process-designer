@@ -1,32 +1,32 @@
 <template>
   <el-collapse-item name="element-execution-listeners">
     <template #title>
-      <collapse-title title="执行监听">
+      <collapse-title title="Execution Listener">
         <lucide-icon name="Radio" />
       </collapse-title>
       <number-tag :value="listeners.length" margin-left="12px" />
     </template>
     <div class="element-extension-listeners">
-      <el-table border :data="listeners" style="width: 100%" height="200px">
+      <el-table border :data="listeners" style="width: 100%" height="200px" :empty-text="'no data'">
         <el-table-column label="No" type="index" width="50" />
         <el-table-column label="EventType" prop="event" show-overflow-tooltip />
         <el-table-column label="ListenerType" prop="type" show-overflow-tooltip />
-        <el-table-column label="操作" width="140">
+        <el-table-column label="Action" width="140">
           <template slot-scope="{ row, $index }">
-            <el-button type="text" @click="openListenerModel($index, row)">编辑</el-button>
-            <el-button type="text" @click="removeListener($index)">移除</el-button>
+            <el-button type="text" @click="openListenerModel($index, row)">Edit</el-button>
+            <el-button type="text" @click="removeListener($index)">Remove</el-button>
           </template>
         </el-table-column>
       </el-table>
 
       <el-button type="primary" class="inline-large-button" icon="el-icon-plus" @click="openListenerModel(-1)">
-        添加执行监听
+        Add Execution Listener
       </el-button>
     </div>
 
     <el-dialog :visible.sync="modelVisible" title="添加执行监听器" width="640px" append-to-body destroy-on-close>
       <el-form ref="formRef" :model="newListener" :rules="formRules" class="need-filled" aria-modal="true">
-        <el-form-item path="event" label="事件类型( Event Type )">
+        <el-form-item path="event" label="Event Type">
           <el-select v-model="newListener.event">
             <el-option
               v-for="{ label, value } in listenerEventTypeOptions"
@@ -36,19 +36,15 @@
             />
           </el-select>
         </el-form-item>
-        <el-form-item path="type" label="监听器类型( Listener Type )">
+        <el-form-item path="type" label="Listener Type">
           <el-select v-model="newListener.type" @change="updateListenerType">
             <el-option v-for="{ label, value } in listenerTypeOptions" :label="label" :value="value" :key="value" />
           </el-select>
         </el-form-item>
-        <el-form-item v-if="formItemVisible.listenerType === 'class'" path="class" label="Java类( Java Class )">
+        <el-form-item v-if="formItemVisible.listenerType === 'class'" path="class" label="Java Class">
           <el-input v-model="newListener.class" @keydown.enter.prevent />
         </el-form-item>
-        <el-form-item
-          v-if="formItemVisible.listenerType === 'expression'"
-          path="expression"
-          label="条件表达式( Expression )"
-        >
+        <el-form-item v-if="formItemVisible.listenerType === 'expression'" path="expression" label="Regex Expression">
           <el-input v-model="newListener.expression" @keydown.enter.prevent />
         </el-form-item>
         <el-form-item
@@ -59,10 +55,10 @@
           <el-input v-model="newListener.delegateExpression" @keydown.enter.prevent />
         </el-form-item>
         <template v-if="formItemVisible.listenerType === 'script' && newListener.script">
-          <el-form-item key="scriptFormat" path="script.scriptFormat" label="脚本格式( Script Format )">
+          <el-form-item key="scriptFormat" path="script.scriptFormat" label="Script Format">
             <el-input v-model="newListener.script.scriptFormat" @keydown.enter.prevent />
           </el-form-item>
-          <el-form-item key="scriptType" path="script.scriptType" label="脚本类型( Script Type )">
+          <el-form-item key="scriptType" path="script.scriptType" label="Script Type">
             <el-select v-model="newListener.script.scriptType" @change="updateScriptType">
               <el-option v-for="{ label, value } in scriptTypeOptions" :label="label" :value="value" :key="value" />
             </el-select>
@@ -71,7 +67,7 @@
             v-if="formItemVisible.scriptType === 'inline'"
             key="scriptContent"
             path="script.value"
-            label="脚本内容( Script Content )"
+            label="Script Content"
           >
             <el-input v-model="newListener.script.value" type="textarea" @keydown.enter.prevent />
           </el-form-item>
@@ -79,15 +75,15 @@
             v-if="formItemVisible.scriptType === 'external'"
             key="scriptResource"
             path="script.resource"
-            label="外链脚本地址( Script Resource )"
+            label="Script Resource"
           >
             <el-input v-model="newListener.script.resource" @keydown.enter.prevent />
           </el-form-item>
         </template>
       </el-form>
       <template #footer>
-        <el-button @click="modelVisible = false">取 消</el-button>
-        <el-button type="primary" @click="saveExecutionListener">确 认</el-button>
+        <el-button @click="modelVisible = false">Cancel</el-button>
+        <el-button type="primary" @click="saveExecutionListener">Confirm</el-button>
       </template>
     </el-dialog>
   </el-collapse-item>
@@ -116,8 +112,8 @@ export default {
       listeners: [],
       newListener: {},
       formRules: {
-        event: { required: true, trigger: ["blur", "change"], message: "事件类型不能为空" },
-        type: { required: true, trigger: ["blur", "change"], message: "监听器类型不能为空" }
+        event: { required: true, trigger: ["blur", "change"], message: "Event type cannot be empty" },
+        type: { required: true, trigger: ["blur", "change"], message: "Listener type cannot be empty" }
       },
       formItemVisible: {
         listenerType: "class",

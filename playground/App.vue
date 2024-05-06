@@ -7,7 +7,6 @@
       <div v-else class="camunda-panel" id="camunda-panel"></div>
     </div>
 
-    <bpmn-settings />
     <bpmn-context-menu />
   </div>
 </template>
@@ -21,7 +20,7 @@ import BpmnContextMenu from "@packages/components/ContextMenu/ContextMenu";
 import BpmnPanel from "@packages/components/Panel";
 export default {
   name: "App",
-  components: { BpmnPanel, BpmnContextMenu, BpmnToolbar, BpmnSettings, BpmnDesigner },
+  components: { BpmnPanel, BpmnContextMenu, BpmnToolbar, BpmnDesigner },
   data() {
     return {
       xmlString: undefined

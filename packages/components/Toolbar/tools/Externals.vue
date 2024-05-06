@@ -9,7 +9,7 @@
       <lucide-icon name="Bot" :size="16" />
       <el-popover
         ref="processMock"
-        content="开启/关闭流程模拟"
+        content="Turn on/off process simulation"
         placement="bottom"
         trigger="hover"
         popper-class="button-popover"
@@ -24,7 +24,7 @@
       <lucide-icon name="Map" :size="16" />
       <el-popover
         ref="minimapToggle"
-        content="展开/收起小地图"
+        content="Expand/Collapse Minimap"
         placement="bottom"
         trigger="hover"
         popper-class="button-popover"
@@ -34,7 +34,7 @@
       <lucide-icon name="FileCheck" :size="16" />
       <el-popover
         ref="lintToggle"
-        content="开启/关闭流程校验"
+        content="Enable/Disable Process Validation"
         placement="bottom"
         trigger="hover"
         popper-class="button-popover"
@@ -44,7 +44,7 @@
       <lucide-icon name="Podcast" :size="16" />
       <el-popover
         ref="eventToggle"
-        content="查看bpmn事件"
+        content="View BPMN Events"
         placement="bottom"
         trigger="hover"
         popper-class="button-popover"
@@ -54,7 +54,7 @@
       <lucide-icon name="Keyboard" :size="16" />
       <el-popover
         ref="keyboard"
-        content="键盘快捷键"
+        content="Keyboard Shortcuts"
         placement="bottom"
         trigger="hover"
         popper-class="button-popover"
@@ -63,7 +63,7 @@
 
     <el-dialog
       :visible.sync="eventModelVisible"
-      title="Bpmn.js 当前已注册事件"
+      title="Bpmn.js Currently Registered Events"
       width="560px"
       append-to-body
       destroy-on-close
@@ -80,7 +80,13 @@
       </div>
     </el-dialog>
 
-    <el-dialog :visible.sync="keyboardModelVisible" title="键盘快捷键" width="560px" append-to-body destroy-on-close>
+    <el-dialog
+      :visible.sync="keyboardModelVisible"
+      title="Keyboard Shortcuts"
+      width="560px"
+      append-to-body
+      destroy-on-close
+    >
       <div class="shortcut-keys-model">
         <p>Undo</p>
         <p>Ctrl + Z</p>

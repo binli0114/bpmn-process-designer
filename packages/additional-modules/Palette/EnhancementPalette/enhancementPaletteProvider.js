@@ -50,18 +50,18 @@ class EnhancementPaletteProvider extends PaletteProvider {
     }
 
     assign(actions, {
-      "create.exclusive-gateway": createAction("bpmn:ExclusiveGateway", "gateway", "bpmn-icon-gateway-none", "网关"),
+      "create.exclusive-gateway": createAction("bpmn:ExclusiveGateway", "gateway", "bpmn-icon-gateway-none", "Gateway"),
       "create.parallel-gateway": createAction(
         "bpmn:ParallelGateway",
         "gateway",
         "bpmn-icon-gateway-parallel",
-        "并行网关"
+        "Parallel Gateway"
       ),
       "create.event-base-gateway": createAction(
         "bpmn:EventBasedGateway",
         "gateway",
         "bpmn-icon-gateway-eventbased",
-        "事件网关"
+        "Event Based Gateway"
       ),
       "gateway-separator": {
         group: "gateway",
@@ -76,7 +76,7 @@ class EnhancementPaletteProvider extends PaletteProvider {
       "create.sql-task": {
         group: "activity",
         className: "miyue-sql-task",
-        title: "数据库任务",
+        title: "DB Task",
         action: {
           click: createSqlTask,
           dragstart: createSqlTask

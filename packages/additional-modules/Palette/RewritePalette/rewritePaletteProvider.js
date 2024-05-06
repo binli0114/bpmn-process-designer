@@ -51,7 +51,7 @@ class RewritePaletteProvider extends PaletteProvider {
       "hand-tool": {
         group: "tools",
         className: "bpmn-icon-hand-tool",
-        title: "手型工具",
+        title: "Hand Tool",
         action: {
           click: function (event) {
             handTool.activateHand(event);
@@ -61,7 +61,7 @@ class RewritePaletteProvider extends PaletteProvider {
       "lasso-tool": {
         group: "tools",
         className: "bpmn-icon-lasso-tool",
-        title: "套索工具",
+        title: "Lasso Tool",
         action: {
           click: function (event) {
             lassoTool.activateSelection(event);
@@ -71,7 +71,7 @@ class RewritePaletteProvider extends PaletteProvider {
       "global-connect-tool": {
         group: "tools",
         className: "bpmn-icon-connection-multi",
-        title: "全局连线",
+        title: "Global Connection",
         action: {
           click: function (event) {
             globalConnect.toggle(event);
@@ -88,7 +88,7 @@ class RewritePaletteProvider extends PaletteProvider {
         "bpmn:StartEvent",
         "events",
         "bpmn-icon-start-event-none",
-        "开始事件"
+        "Start Event"
       ),
       "create.end-event": createAction(
         elementFactory,
@@ -96,7 +96,7 @@ class RewritePaletteProvider extends PaletteProvider {
         "bpmn:EndEvent",
         "events",
         "bpmn-icon-end-event-none",
-        "结束事件"
+        "End Event"
       ),
       "events-separator": {
         group: "events",
@@ -108,7 +108,7 @@ class RewritePaletteProvider extends PaletteProvider {
         "bpmn:ExclusiveGateway",
         "gateway",
         "bpmn-icon-gateway-none",
-        "网关"
+        "gateway"
       ),
       "create.parallel-gateway": createAction(
         elementFactory,
@@ -116,7 +116,7 @@ class RewritePaletteProvider extends PaletteProvider {
         "bpmn:ParallelGateway",
         "gateway",
         "bpmn-icon-gateway-parallel",
-        "并行网关"
+        "Parallel Gateway"
       ),
       "create.event-base-gateway": createAction(
         elementFactory,
@@ -136,7 +136,7 @@ class RewritePaletteProvider extends PaletteProvider {
         "bpmn:UserTask",
         "activity",
         "bpmn-icon-user-task",
-        "用户任务"
+        "User Task"
       ),
       "create.script-task": createAction(
         elementFactory,
@@ -144,7 +144,7 @@ class RewritePaletteProvider extends PaletteProvider {
         "bpmn:ScriptTask",
         "activity",
         "bpmn-icon-script-task",
-        "脚本任务"
+        "Script Task"
       ),
       "create.service-task": createAction(
         elementFactory,
@@ -152,12 +152,12 @@ class RewritePaletteProvider extends PaletteProvider {
         "bpmn:ServiceTask",
         "activity",
         "bpmn-icon-service-task",
-        "服务任务"
+        "Service Task"
       ),
       "create.sql-task": {
         group: "activity",
         className: "miyue-sql-task",
-        title: "数据库任务",
+        title: "DB Task",
         action: {
           click: createSqlTask,
           dragstart: createSqlTask
@@ -166,7 +166,7 @@ class RewritePaletteProvider extends PaletteProvider {
       "create.subprocess-expanded": {
         group: "activity",
         className: "bpmn-icon-subprocess-expanded",
-        title: "子流程",
+        title: "Subprocess",
         action: {
           dragstart: createSubprocess,
           click: createSubprocess
